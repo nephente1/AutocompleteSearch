@@ -11,8 +11,8 @@ const Dropdown: React.FC<DropdownProps> = ({ filteredData, searchHistory, onSele
   return (
     <ul className="dropdown-list">
       {filteredData.map((item, index) => (
-        <li key={index} onClick={() => onSelect(item)} className={searchHistory.includes(item) ? "dropdown-item highlight" : "dropdown-item"}>
-          <span >{item}</span>
+        <li data-testid="dropdown-item" key={index} onClick={() => onSelect(item)} className={searchHistory.includes(item) ? "dropdown-item highlight" : "dropdown-item"}>
+          <span data-testid="list-item">{item}</span>
           <button onClick={(e) => { e.stopPropagation(); onRemove(item); }}>X</button>
         </li>
       ))}

@@ -12,7 +12,7 @@ export interface filteredResultsTypes {
 }
 
 interface SearchAutocompleteProps {
-  setResults: (results: Array<filteredResultsTypes>) => void;
+  setResults?: (results: Array<filteredResultsTypes>) => void;
 }
 
 const SearchAutocomplete = ({setResults}: SearchAutocompleteProps) => {
@@ -98,6 +98,7 @@ const SearchAutocomplete = ({setResults}: SearchAutocompleteProps) => {
       <label htmlFor="search">Search autocomplete</label>
       <div className="flex search-wrapper" ref={refElement}>
         <input
+          data-testid="input-search"
           type="text"
           value={searchTerm}
           onChange={handleInputChange}
@@ -113,7 +114,7 @@ const SearchAutocomplete = ({setResults}: SearchAutocompleteProps) => {
             onRemove={handleRemove} 
           />
         )}
-        <button type="button" onClick={handleSearch}>Search</button>
+        <button type="button" name="search" onClick={handleSearch}>Search</button>
       </div>
       {searchMetadata.count > 0 && (
         <div className="search-metadata">
