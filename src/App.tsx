@@ -6,7 +6,7 @@ const App = () => {
   const [results, setResults] = useState([]);
 
   return (
-    <div className="container">
+    <div className="px-10 py-5">
       <SearchAutocomplete setResults={setResults}/>
       {results.length > 0 && <ResultsList results={results} />}
     </div>

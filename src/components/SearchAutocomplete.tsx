@@ -96,7 +96,7 @@ const SearchAutocomplete = ({setResults}: SearchAutocompleteProps) => {
   return(
     <>
       <label htmlFor="search">Search autocomplete</label>
-      <div className="flex search-wrapper" ref={refElement}>
+      <div className="flex-center relative w-70" ref={refElement}>
         <input
           data-testid="input-search"
           type="text"
@@ -117,7 +117,7 @@ const SearchAutocomplete = ({setResults}: SearchAutocompleteProps) => {
         <button type="button" name="search" onClick={handleSearch}>Search</button>
       </div>
       {searchMetadata.count > 0 && (
-        <div className="search-metadata">
+        <div className="my-5 mx-0 text-xs text-gray-400">
           <p>
             Found {searchMetadata.count} results in {searchMetadata.time.toFixed(2)} ms.
           </p>
